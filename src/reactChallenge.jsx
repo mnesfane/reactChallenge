@@ -20,16 +20,12 @@ export function ReactChallenge(){
     let doubleClickIndex= useRef(0);
     let interValId = useRef(null);
 
-    
     const handleClavier = (indexButtonArg)=>{
-        // alert(indexButtonArg)
         setIndexButton(prevIndexButton=>{
             if(prevIndexButton === indexButtonArg && doubleClickIndex.current !== -1){
                 if(interValId.current) clearTimeout(interValId.current)
-                // alert(doubleClickIndex.current)
                 setMess((prevMess)=> prevMess.slice(0, -1))
                 doubleClickIndex.current === clavier[indexButtonArg].length - 1 ? doubleClickIndex.current = 0 : doubleClickIndex.current++
-                // alert(doubleClickIndex.current)
             }
             else{
                 doubleClickIndex.current = 0
@@ -41,7 +37,6 @@ export function ReactChallenge(){
             return indexButtonArg
         })
     }
-
 
     return(
         <>
